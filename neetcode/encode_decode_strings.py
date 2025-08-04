@@ -41,6 +41,6 @@ solution = Solution()
 encoded = solution.encode(encode_text)
 print(f"Encoded: {encoded}")
 
-decode_text = "5#hello6#worl#d4#this2#is1#a4#test"
+decode_text = "5#hello5#worl#d4#this2#is1#a4#test"
 decoded = solution.decode(decode_text)
 print(f"Decoded: {decoded}")
