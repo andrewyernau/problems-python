@@ -22,7 +22,7 @@ class Solution:
         #Get the chars we need and the amount
         for c in goalStr:
             need[c] = need.get(c, 0) + 1
-            
+          
         have = {}
         have_count = 0
         need_count = len(need)  # number of distinct characters we need
