@@ -20,15 +20,19 @@
 class Solution:
     def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:
         slidingMaxs = []
+        current_max = max(nums[0:k])
+        slidingMaxs.append(current_max)
+        for right in range(k, len(nums)):
+            left = right - k + 1
+            
+            if nums[right] > current_max:
+                current_max = nums[right]
+            
+            elif nums[left - 1] == current_max:
+                current_max = max(nums[left:right+1])
+            
+            slidingMaxs.append(current_max)
         
-        for num in range(k-1,len(nums)):
-            left =num-k+1
-            right = num
-            subNums = nums[left:right+1]
-            print({left},{num})
-            print(subNums)
-            print(max(subNums))
-            slidingMaxs.append(max(subNums))
         return slidingMaxs
 
 solution = Solution()
